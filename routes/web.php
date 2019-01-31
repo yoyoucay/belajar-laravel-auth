@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//redirect to profile page
+Route::get('/profile', 'UserController@profile')->middleware('auth');
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
